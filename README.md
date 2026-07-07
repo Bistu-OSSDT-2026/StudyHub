@@ -95,7 +95,7 @@ npm run dev
 前端将在 http://localhost:3000/ 启动，API 请求自动代理到后端 5000 端口。
 
 访问系统
-浏览器打开 http://localhost:5173，即可看到自习室预约系统首页。
+浏览器打开 http://localhost:3000/，即可看到自习室预约系统首页。
 
 API 接口
 方法	         路径	                      说明
