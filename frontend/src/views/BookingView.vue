@@ -1,3 +1,4 @@
+<!-- Bug fix: 修复座位预约后状态未更新的问题 - Mag-ladroth -->
 <template>
   <div>
     <el-card>
@@ -106,6 +107,9 @@ const submitBooking = async () => {
     await createBooking(form)
     ElMessage.success('预约成功！')
     form.seat_id = null
+    // 修复：预约成功后自动刷新座位列表，确保状态显示正确
+    const res = await getSeatsByRoom(form.room_id, form.date)
+    availableSeats.value = res.data
   } catch (err) {
     ElMessage.error(err.response?.data?.error || '预约失败')
   } finally {
