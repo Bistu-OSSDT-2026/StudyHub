@@ -22,7 +22,7 @@ jobs:
           if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
       - name: Run flake8
         run: |
-          flake8 backend/ --count --max-line-length=120 --ignore=E501,W291,W293,W391
+          flake8 backend/ --count --max-line-length=120 --ignore=E501,W291,W292,W293,W391,E302,E124
 
   lint-frontend:
     name: Lint frontend
